@@ -33,9 +33,12 @@ public class Main {
     private static void exercise2(){
         Sorter sorter = MiFactory.getInstance();
         Comparator<Integer> comparator = (a,b)->b-a;
-        Object[] array = initArray(5);
+        Object[] array = initArray(8000);
+        Time timer = new Time();
+        timer.start();
         sorter.sort(array,comparator);
-        printArray(array);
+        timer.end();
+        System.out.println("Demoro: " + timer.elapsedTime() + " segundos.");
     }
     private static Object[] initArray(int length){
         Object[] array = new Object[length];

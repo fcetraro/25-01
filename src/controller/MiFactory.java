@@ -2,6 +2,6 @@ package controller;
 
 public class MiFactory {
     public static Sorter getInstance(){
-        return new QuickSortSorterImple();
+        return new BubbleSortSorterImple();
     }
 }
