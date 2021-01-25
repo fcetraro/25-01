@@ -2,10 +2,13 @@ package controller;
 
 import util.SortUtil;
 
+import java.util.Comparator;
+
 public class Main {
     public static void main(String[] args)
     {
-        exercise1();
+        //exercise1();
+        exercise2();
     }
     private static void exercise1(){
         Persona p0 = new Persona("Federico Cetraro", 123);
@@ -26,5 +29,19 @@ public class Main {
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i].toString());
         }
+    }
+    private static void exercise2(){
+        Sorter sorter = MiFactory.getInstance();
+        Comparator<Integer> comparator = (a,b)->b-a;
+        Object[] array = initArray(5);
+        sorter.sort(array,comparator);
+        printArray(array);
+    }
+    private static Object[] initArray(int length){
+        Object[] array = new Object[length];
+        for (int i = 0; i < length; i++) {
+            array[i]=length-i;
+        }
+        return array;
     }
 }
