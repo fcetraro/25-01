@@ -11,7 +11,7 @@ public class MiFactory {
             sc.useDelimiter("\\Z");
             String[] array = sc.next().split("\\.", 0);
             Class reflectionClass = Class.forName("controller."+array[1]);
-            Object obj = reflectionClass.newInstance();
+            Object obj = reflectionClass.getDeclaredConstructor().newInstance();
             return (Sorter) obj;
         } catch (Exception e){
             e.printStackTrace();
